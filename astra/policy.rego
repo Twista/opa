@@ -37,11 +37,10 @@ valid_token {
 	claims.exp > time.now_ns() / 1000000000 # Check if token is expired
 }
 
-has_role(role)[message] {
+has_role(role) {
 	claims := io.jwt.decode(bearer_token)[1]
 	roles := claims.roles
 	roles[_] == role
-	message := "No role?"
 }
 
 bearer_token := t {
