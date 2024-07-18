@@ -20,7 +20,7 @@ allow {
 allow {
     valid_token
     service_is("/cam")
-    has_role("LAA")
+    has_role("SFU")
 }
 
 
